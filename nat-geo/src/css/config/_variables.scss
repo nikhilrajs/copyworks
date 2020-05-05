@@ -1,0 +1,45 @@
+:root {
+  --ratio: 1.5;
+  --s-5: calc(var(--s-4) / var(--ratio));
+  --s-4: calc(var(--s-3) / var(--ratio));
+  --s-3: calc(var(--s-2) / var(--ratio));
+  --s-2: calc(var(--s-1) / var(--ratio));
+  --s-1: calc(var(--s0) / var(--ratio));
+  --s0: 1rem;
+  --s1: calc(var(--s0) * var(--ratio));
+  --s2: calc(var(--s1) * var(--ratio));
+  --s3: calc(var(--s2) * var(--ratio));
+  --s4: calc(var(--s3) * var(--ratio));
+  --s5: calc(var(--s4) * var(--ratio));
+  --font-size-base: var(--s0);
+}
+
+// $font-stack: "Jost", "Franklin Gothic Medium", "Franklin Gothic",
+$font-stack: "Jost", "CenturyGothic", AppleGothic, Gill Sans, Gill Sans MT,
+  sans-serif;
+
+// Neutrals
+$ng_color-black: #000;
+$ng_color-gray-86: #222;
+$ng_color-gray-80: #333;
+$ng_color-gray-66: #555;
+$ng_color-gray-50: #808080;
+$ng_color-gray-40: #999;
+$ng_color-gray-36: #a4a4a4;
+$ng_color-gray-30: #ccc;
+$ng_color-gray-10: #e6e6e6;
+$ng_color-gray-5: #f2f2f2;
+$ng_color-gray-3: #f7f7f7;
+$ng_color-gray-2: #fafafa;
+$ng_color-white: #fff;
+$lightgray: #d3d3d3;
+
+$ng_color-primary: #fc0;
+
+$screen-s: 480px;
+$screen-m: 768px;
+$screen-l: 1020px;
+
+$ng_bp-sm: "screen and (min-width: #{$screen-s})";
+$ng_bp-md: "screen and (min-width: #{$screen-m})";
+$ng_bp-lg: "screen and (min-width: #{$screen-l})";

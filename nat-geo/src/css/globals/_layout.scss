@@ -1,0 +1,18 @@
+.content {
+  flex: 1 0 auto;
+}
+
+.ng-l-container {
+  padding: 0 var(--s0);
+  width: 100%;
+
+  @media #{$ng_bp-md} {
+    margin: 0 auto;
+    max-width: 730px;
+    padding: 0;
+  }
+  @media #{$ng_bp-lg} {
+    max-width: 1020px;
+    padding: 0;
+  }
+}

@@ -1,10 +1,44 @@
+// 01-config
+// 	_variables.scss
+// 	_functions.scss
+// 	_mixins.scss
+// 02-base
+// 	_resets.scss
+// 	_typography.scss
+// 	_forms.scss
+// 03-objects
+// 	_buttons.scss
+// 04-globals
+// 	_header.scss
+// 	_footer.scss
+// 	_layout.scss
+// 05-components
+// 06-utilities
+
+@import "config/variables";
+
+@import "base/resets";
+@import "base/elements";
+@import "base/typography";
+
+@import "globals/header";
+@import "globals/layout";
+@import "globals/footer";
+
 body {
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  font-family: sans-serif;
+  font-family: $font-stack;
 }
 
-::placeholder {
-  color: gray;
+.wrapper {
+  margin: 0 auto;
+  max-width: 60ch;
+  background: red;
+}
+
+h1 {
+  color: #fff;
+}
+
+.text-align\:center {
+  text-align: center;
 }
