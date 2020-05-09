@@ -1,29 +1,19 @@
-// 01-config
-// 	_variables.scss
-// 	_functions.scss
-// 	_mixins.scss
-// 02-base
-// 	_resets.scss
-// 	_typography.scss
-// 	_forms.scss
-// 03-objects
-// 	_buttons.scss
-// 04-globals
-// 	_header.scss
-// 	_footer.scss
-// 	_layout.scss
-// 05-components
+@import "01-config/all";
+
+@import "02-base/resets";
+@import "02-base/elements";
+@import "02-base/typography";
+
+// 03-Objects
+@import "03-objects/list-bare";
+
+@import "04-globals/header";
+@import "04-globals/layout";
+@import "04-globals/footer";
+
+@import "05-components/icons";
+@import "05-components/global-nav";
+@import "05-components/logo";
+@import "05-components/hero";
+
 // 06-utilities
-
-@import "config/variables";
-
-@import "base/resets";
-@import "base/elements";
-@import "base/typography";
-
-@import "globals/header";
-@import "globals/layout";
-@import "globals/footer";
-
-body {
-}

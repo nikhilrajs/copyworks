@@ -1,0 +1,12 @@
+.ng-c-global-logo {
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  svg {
+    max-width: var(--s5);
+    max-height: var(--s2);
+  }
+}

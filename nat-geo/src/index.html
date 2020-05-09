@@ -3,17 +3,70 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&display=swap">
     <link rel="stylesheet" href="./css/main.scss" />
     <title>Nat Geo</title>
   </head>
   <body>
-    <header>
-      <div class="ng-l-container">
-        <h2>Header</h2>
+    <header class="ng-g-header">
+      <div>
+        <div class="ng-c-global-logo">
+          <a href="#">
+            <svg>
+              <title>National Geographic Logo</title>
+              <use href="images/ng-logo.svg">
+            </svg>
+          </a>
+        </div>
+        <nav class="ng-c-global-nav">
+          <ul>
+            <li><a href="#">Subscribe</a></li>
+            <li>
+              <a href="#">
+                <span class="ng-c-icon ng-c-icon--baseline">
+                  <svg>
+                    <title>Profile</title>
+                    <use href="icons/ng-icn-user.svg">
+                  </svg>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="ng-c-icon ng-c-icon--baseline">
+                  <svg>
+                    <title>Search</title>
+                    <use href="icons/ng-icn-search.svg">
+                  </svg>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Menu
+                <span class="ng-c-icon ng-c-icon--baseline">
+                  <svg>
+                    <title>Search</title>
+                    <use href="icons/ng-icn-chevron-down.svg">
+                  </svg>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </header>
-    <main class="ng-main">
-      <div class="ng-l-container">
+    <main class="ng-g-main">
+      <div class="ng-c-hero">
+        <div>
+          <img src="./images/nat-img-hero.jpg" alt="" class="ng-c-hero__img">
+          <div class="ng-c-hero__content">
+            <h2>Coronavirus Coverage</h2>
+            <p>The latest updates on the COVID-19 pandemic.</p>
+          </div>
+        </div>
+      </div>
+      <div class="ng-g-container">
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
           maxime blanditiis earum dignissimos, totam sapiente voluptate culpa
@@ -31,9 +84,10 @@
       </div>
     </main>
     <footer class="ng-g-footer">
-      <div class="ng-l-container">
+      <div class="ng-g-container">
         <h4>Footer</h4>
       </div>
     </footer>
+    <script src="./js/index.js" type="module"></script>
   </body>
 </html>

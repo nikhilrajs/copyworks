@@ -1,0 +1,15 @@
+.ng-c-icon {
+  display: inline-flex;
+  align-self: center;
+}
+
+.ng-c-icon svg {
+  height: 1em;
+  width: 1em;
+  fill: currentColor;
+}
+
+.ng-c-icon.ng-c-icon--baseline svg {
+  top: 0.185em;
+  position: relative;
+}

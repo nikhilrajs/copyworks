@@ -1,3 +1,6 @@
-.header {
+.ng-g-header {
+  @include cluster(space-between, var(--s0));
   flex-shrink: 0;
+  padding: var(--s-2) var(--s0);
+  border-bottom: 1px solid $ng_color-gray-10;
 }
