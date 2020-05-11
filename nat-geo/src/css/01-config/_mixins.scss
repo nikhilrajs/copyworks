@@ -31,6 +31,31 @@
   }
 }
 
+@mixin box(
+  $padding,
+  $color-light,
+  $color-dark,
+  $border-color,
+  $border-thickness
+) {
+  --border-thin: #{$border-thickness};
+  padding: #{$padding};
+  border: var(--border-thin) solid #{$border-color};
+  --color-light: #($color-light);
+  --color-dark: #($color-dark);
+  color: var(--color-dark);
+  background-color: var(--color-light);
+
+  & * {
+    color: inherit;
+  }
+
+  &.invert {
+    color: var(--color-light);
+    background-color: var(--color-dark);
+  }
+}
+
 @mixin clearfix {
   &::after {
     content: "";

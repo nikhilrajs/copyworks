@@ -1,0 +1,58 @@
+.ng-c-card {
+  @include box(
+    var(--s0),
+    $ng_color-white,
+    $ng_color-black,
+    $ng_color-gray-10,
+    1px
+  );
+}
+
+.card,
+.card .text {
+  display: flex;
+  flex-direction: column;
+}
+
+.card .text {
+  max-width: 60ch;
+  flex-grow: 1;
+}
+
+.card + .card {
+  margin-top: 1.5rem;
+}
+
+.card .text > * + * {
+  margin-top: 0.75rem;
+}
+
+.card .text :last-child {
+  margin-top: auto;
+}
+
+.card .text :nth-last-child(2) {
+  margin-bottom: 0.75rem;
+}
+
+.card .img {
+  height: 5rem;
+}
+
+.card .img img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+@supports (display: grid) {
+  .cards > ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    grid-gap: 1.5rem;
+  }
+
+  .card + .card {
+    margin-top: 0;
+  }
+}
