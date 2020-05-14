@@ -1,11 +1,13 @@
 .ng-g-container {
-  padding-left: var(--s1);
-  padding-right: var(--s1);
+  --space: var(--s0);
+  padding-left: var(--space);
+  padding-right: var(--space);
   margin-left: auto;
   margin-right: auto;
   width: 100%;
 
   @media #{$ng_bp-md} {
+    --space: var(--s1);
     max-width: 730px;
   }
 
@@ -15,13 +17,22 @@
 }
 
 .ng-g-main {
-  @include stack(var(--s1));
+  --space: var(--s0);
+  @include stack(var(--space));
   flex: 1 0 auto;
 }
 
 .ng-l-grid {
+  --space: var(--s0);
   display: grid;
-  grid-gap: var(--s1);
+  grid-gap: var(--space);
+
+  @media #{$ng_bp-md} {
+    --space: var(--s1);
+  }
+}
+
+.ng-l-grid.aboveMin {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
@@ -30,3 +41,9 @@
 //     grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
 //   }
 // }
+
+.ng-c-card--invert {
+  @media (min-width: 555px) {
+    grid-column: 1 / 3;
+  }
+}

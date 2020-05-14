@@ -59,7 +59,7 @@ img {
 }
 
 /* Natural flow and rhythm in articles by default */
-article > * + * {
+article:not([class]) > * + * {
   margin-top: 1em;
 }
 

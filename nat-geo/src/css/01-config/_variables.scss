@@ -42,3 +42,5 @@ $screen-l: 1020px;
 $ng_bp-sm: "screen and (min-width: #{$screen-s})";
 $ng_bp-md: "screen and (min-width: #{$screen-m})";
 $ng_bp-lg: "screen and (min-width: #{$screen-l})";
+
+$ng-transition-timing: 200ms;

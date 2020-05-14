@@ -1,5 +1,4 @@
 @mixin cluster($justify-content, $space) {
-  --space: #{$space};
   overflow: hidden;
 
   > * {
@@ -7,16 +6,15 @@
     flex-wrap: wrap;
     justify-content: $justify-content;
     align-items: center;
-    margin: calc(var(--space) / 2 * -1);
+    margin: calc(#{$space} / 2 * -1);
   }
 
   > * > * {
-    margin: calc(var(--space) / 2);
+    margin: calc(#{$space} / 2);
   }
 }
 
-@mixin stack($margin-top) {
-  --space: #{$margin-top};
+@mixin stack($sm-margin-top) {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -27,22 +25,16 @@
   }
 
   > * + * {
-    margin-top: var(--space);
+    margin-top: $sm-margin-top;
   }
 }
 
-@mixin box(
-  $padding,
-  $color-light,
-  $color-dark,
-  $border-color,
-  $border-thickness
-) {
-  --border-thin: #{$border-thickness};
+@mixin box($padding, $color-light, $color-dark) {
+  $self: &; // https://css-tricks.com/using-sass-control-scope-bem-naming/
   padding: #{$padding};
-  border: var(--border-thin) solid #{$border-color};
-  --color-light: #($color-light);
-  --color-dark: #($color-dark);
+  border: var(--border-thin) solid;
+  --color-light: #{$color-light};
+  --color-dark: #{$color-dark};
   color: var(--color-dark);
   background-color: var(--color-light);
 
@@ -50,7 +42,7 @@
     color: inherit;
   }
 
-  &.invert {
+  &--invert {
     color: var(--color-light);
     background-color: var(--color-dark);
   }

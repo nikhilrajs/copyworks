@@ -39,12 +39,12 @@
   flex-direction: column;
   align-items: center;
   grid-area: hero-content;
-  padding-left: var(--s3);
   color: $ng_color-white;
   text-align: center;
   z-index: 1;
 
   @media #{$ng_bp-md} {
+    padding-left: var(--s3);
     text-align: left;
     justify-content: center;
     align-items: flex-start;

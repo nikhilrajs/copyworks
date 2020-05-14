@@ -4,4 +4,8 @@
     padding: 0;
     list-style: none;
   }
+
+  > ul > li > a {
+    padding: var(--s-3);
+  }
 }
