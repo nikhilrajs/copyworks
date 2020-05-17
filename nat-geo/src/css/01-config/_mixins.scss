@@ -48,6 +48,35 @@
   }
 }
 
+@mixin center(
+  $max-width: "100%",
+  $text-align: "left",
+  $intrinsic-center: false
+) {
+  --center-max-width: #{$max-width};
+  box-sizing: content-box;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--center-max-width);
+
+  @if ($text-align = "center") {
+    text-align: center;
+  }
+
+  @if $intrinsic-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@mixin truncate-overflow($number-of-lines) {
+  display: -webkit-box;
+  -webkit-line-clamp: $number-of-lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 @mixin clearfix {
   &::after {
     content: "";

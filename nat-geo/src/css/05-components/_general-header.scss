@@ -1,0 +1,28 @@
+.ng-c-general-header {
+  @include center(center);
+  @include stack(var(--s-1));
+  position: relative;
+  padding-bottom: var(--s1);
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+    width: 60px;
+    height: 4px;
+    background-color: $ng_color-primary;
+  }
+
+  &__heading {
+    font-size: var(--s2);
+    letter-spacing: 4.2px;
+    text-transform: uppercase;
+  }
+
+  &__copy {
+    font-size: calc(var(--s1) / 1.2);
+  }
+}

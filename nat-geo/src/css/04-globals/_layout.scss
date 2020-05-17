@@ -1,13 +1,16 @@
 .ng-g-container {
-  --space: var(--s0);
-  padding-left: var(--space);
-  padding-right: var(--space);
+  --continer-gap: var(--s0);
+  --padding: var(--s0);
+  @include stack(var(--continer-gap));
+  padding-left: var(--padding);
+  padding-right: var(--padding);
   margin-left: auto;
   margin-right: auto;
   width: 100%;
 
   @media #{$ng_bp-md} {
-    --space: var(--s1);
+    --continer-gap: var(--s2);
+    --padding: var(--s1);
     max-width: 730px;
   }
 
@@ -17,18 +20,22 @@
 }
 
 .ng-g-main {
-  --space: var(--s0);
-  @include stack(var(--space));
+  --main-space: var(--s0);
+  @include stack(var(--main-space));
   flex: 1 0 auto;
+
+  @media #{$ng_bp-md} {
+    --main-space: var(--s2);
+  }
 }
 
 .ng-l-grid {
-  --space: var(--s0);
+  --gap: var(--s0);
   display: grid;
-  grid-gap: var(--space);
+  grid-gap: var(--gap);
 
   @media #{$ng_bp-md} {
-    --space: var(--s1);
+    --gap: var(--s2);
   }
 }
 
@@ -36,14 +43,35 @@
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
-// @supports (width: min(250px, 100%)) {
+// @supports (width: min(var(--val1), var(--val2))) {
 //   .ng-l-grid {
 //     grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
 //   }
 // }
 
-.ng-c-card--invert {
-  @media (min-width: 555px) {
-    grid-column: 1 / 3;
+.ng-l-center {
+  @include center();
+
+  &--center-content {
+    @include center($intrinsic-center: true);
+  }
+}
+
+.ng-l-cta-block {
+  --cta-block: var(--s2);
+  padding-top: var(--cta-block);
+  padding-bottom: var(--cta-block);
+
+  @media #{$ng_bp-md} {
+    --content-block-space: var(--s3);
+  }
+}
+
+.ng-l-content-block {
+  --content-block-space: var(--s2);
+  padding-bottom: var(--content-block-space);
+
+  @media #{$ng_bp-md} {
+    --content-block-space: var(--s3);
   }
 }

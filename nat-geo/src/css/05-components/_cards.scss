@@ -6,6 +6,32 @@
   border: solid 1px $ng_color-gray-10;
 }
 
+.ng-c-card--featured {
+  min-height: 423px;
+  margin-left: calc(var(--s0) * -1);
+  margin-right: calc(var(--s0) * -1);
+  color: var(--color-light);
+
+  @media (min-width: 547px) {
+    grid-column: 1 / 3;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .ng-c-card__figure {
+    &::after {
+      all: initial;
+    }
+  }
+
+  .ng-c-card__body {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}
+
 .ng-c-card__body {
   --space: var(--s0);
   @include stack(var(--space));
@@ -13,8 +39,15 @@
 }
 
 .ng-c-card__title {
+  line-height: 1.211;
+
+  .ng-c-card--featured & {
+    font-size: var(--s2);
+  }
+
   a {
     text-decoration: none;
+    @include truncate-overflow(3);
 
     &::after {
       content: "";
@@ -27,11 +60,31 @@
   }
 }
 
+.ng-c-card__subtitle {
+  position: relative;
+  font-size: 0.75em;
+  font-weight: 500;
+  text-transform: uppercase;
+  z-index: 1;
+
+  a {
+    text-decoration: none;
+    letter-spacing: 3px;
+  }
+
+  :not(.ng-c-card--featured) > .ng-c-card__body > & {
+    color: $ng_color-gray-40;
+  }
+}
+
 .ng-c-card__figure {
   flex-grow: 1;
-  height: 10rem;
+  height: 15rem;
   overflow: hidden;
   position: relative;
+  margin-left: -1px;
+  margin-right: -1px;
+  margin-top: -1px;
 
   &::after {
     content: "";

@@ -1,3 +1,8 @@
-.ng-g-header {
+.ng-g-footer {
+  --footer-v-padding: var(--s3);
+  padding-top: var(--footer-v-padding);
+  padding-bottom: var(--footer-v-padding);
+  background-color: $ng_color-black;
+  color: $ng_color-white;
   flex-shrink: 0;
 }

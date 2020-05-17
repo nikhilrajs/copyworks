@@ -1,0 +1,18 @@
+.ng-c-link {
+  color: inherit;
+  text-decoration: none;
+  background-image: linear-gradient(
+    120deg,
+    $ng_color-primary 0%,
+    $ng_color-primary 100%
+  );
+  background-position: 0 100%;
+  background-size: 100% 0;
+  background-repeat: no-repeat;
+  border-bottom: 2px solid $ng_color-primary;
+  transition: background-size 125ms ease-in;
+
+  &:hover {
+    background-size: 100% 100%;
+  }
+}
