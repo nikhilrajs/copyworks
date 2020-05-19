@@ -1,20 +1,20 @@
-@mixin cluster($justify-content, $space) {
-  overflow: hidden;
+/**
+*
+*  LAYOUT PRIMITIVES
+*  Layout primitives can be combined to different compositions
+*  Stack .................. Will stack content with space in between
+*  Box .................... A regular box 
+*  Center ................. Centers the content with options for gutter and text alignment 
+*  Cluster ................ Groups content in a line, for example, header navigation.
+*  Grid ................... Intrinsically responsive, with options to control gutter and column width
+*
+*  GENERIC
+*  Truncate Overflow....... Truncate overflowing text and puts ellipsis at the end.
+*  Clearfix................ Group children of floated parents
+*
+**/
 
-  > * {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: $justify-content;
-    align-items: center;
-    margin: calc(#{$space} / 2 * -1);
-  }
-
-  > * > * {
-    margin: calc(#{$space} / 2);
-  }
-}
-
-@mixin stack($sm-margin-top) {
+@mixin stack($sm-margin-top: var(--s0)) {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -25,7 +25,7 @@
   }
 
   > * + * {
-    margin-top: $sm-margin-top;
+    margin-top: #{$sm-margin-top};
   }
 }
 
@@ -50,6 +50,7 @@
 
 @mixin center(
   $max-width: "100%",
+  $gutter: "1rem",
   $text-align: "left",
   $intrinsic-center: false
 ) {
@@ -57,6 +58,8 @@
   box-sizing: content-box;
   margin-left: auto;
   margin-right: auto;
+  padding-left: #{$gutter};
+  padding-right: #{$gutter};
   max-width: var(--center-max-width);
 
   @if ($text-align = "center") {
@@ -67,6 +70,53 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+}
+
+@mixin cluster($justify-content, $space) {
+  overflow: hidden;
+
+  > * {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: $justify-content;
+    align-items: center;
+    margin: calc(#{$space} / 2 * -1);
+  }
+
+  > * > * {
+    margin: calc(#{$space} / 2);
+  }
+}
+
+// --ng-general-grid-min: min(250px, 100%);
+
+@mixin grid(
+  $gutter-sm: var(--s0),
+  $gutter-md: var(--s1),
+  $gutter-lg: var(--s2),
+  $col-min-width: 250px
+) {
+  --grid-min-wdth: min(#{$col-min-width}, 100%);
+  --grid-gutter: #{$gutter-sm};
+  display: grid;
+  grid-gap: var(--grid-gutter);
+
+  @media #{$ng_bp-md} {
+    --grid-gutter: #{$gutter-md};
+  }
+
+  @media #{$ng_bp-lg} {
+    --grid-gutter: #{$gutter-lg};
+  }
+
+  @supports (width: var(--grid-min-wdth)) {
+    & {
+      grid-template-columns: repeat(
+        auto-fit,
+        minmax(var(--grid-min-wdth), 1fr)
+      );
+    }
   }
 }
 

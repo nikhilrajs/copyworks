@@ -1,0 +1,68 @@
+.ng-c-gobal-search-modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  display: none;
+  place-items: center;
+  background: $ng_color-gray-86;
+  transform-origin: top;
+  transition: all 250ms ease-in-out;
+  will-change: transform, opacity;
+
+  &.open {
+    display: grid;
+  }
+}
+
+.ng-c-gobal-search__form {
+  display: flex;
+  width: 80vw;
+  border-bottom: 1px solid $ng_color-gray-66;
+}
+
+.ng-c-gobal-search__search-btn,
+.ng-c-gobal-search__submit-btn,
+.ng-c-gobal-search__close-btn {
+  flex-shrink: 0;
+  appearance: none;
+  background: transparent;
+  border: none;
+  text-transform: uppercase;
+  font-size: var(--s2);
+  color: $ng_color-white;
+  cursor: pointer;
+}
+
+.ng-c-gobal-search__input {
+  flex: 1 0 auto;
+  background: transparent;
+  border: none;
+  text-transform: uppercase;
+  font-size: var(--s3);
+  font-weight: bold;
+  text-align: center;
+  color: $ng_color-white;
+  letter-spacing: 10px;
+
+  &::placeholder {
+    color: $ng_color-gray-66;
+  }
+}
+
+.ng-c-gobal-search__submit-btn {
+  font-size: calc(var(--s1) / 1.2);
+  color: $ng_color-gray-40;
+  font-weight: 500;
+  visibility: hidden;
+}
+
+.ng-c-gobal-search__close-btn {
+  position: absolute;
+  right: var(--s-1);
+  top: var(--s-1);
+  padding: 16px 24px;
+  color: $ng_color-white;
+}

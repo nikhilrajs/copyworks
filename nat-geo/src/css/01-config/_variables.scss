@@ -12,6 +12,7 @@
   --s4: calc(var(--s3) * var(--ratio));
   --s5: calc(var(--s4) * var(--ratio));
   --measure: 65ch;
+  // --ng-general-grid-min: min(250px, 100%);
 }
 
 // $font-stack: "Jost", "Franklin Gothic Medium", "Franklin Gothic",

@@ -1,11 +1,55 @@
 .ng-c-global-nav {
-  @include cluster(flex-start, var(--s0));
+  // @include cluster(flex-start, var(--s0));
   > ul {
+    display: flex;
     padding: 0;
+    margin: 0;
     list-style: none;
   }
 
   > ul > li > a {
+    text-decoration: none;
     padding: var(--s-3);
+    color: $ng_color-gray-80;
+  }
+
+  .ng-c-global-nav__link {
+    display: none;
+    margin-right: var(--s-2);
+    margin-left: var(--s-2);
+    padding: 0;
+    font-size: calc(var(--s0) / 1.1);
+    letter-spacing: 1px;
+
+    @media #{$ng_bp-md} {
+      display: inline-block;
+    }
+
+    &:hover {
+      border-bottom: 2px solid $ng_color-primary;
+    }
+  }
+
+  .ng-o-icon--large svg {
+    width: 1.4em;
+    height: 1.4em;
+  }
+
+  .ng-c-global-nav__menu {
+    padding-left: var(--s1);
+    font-size: calc(var(--s0) / 1.1);
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: $ng_color-black;
+
+    .ng-o-icon svg {
+      width: 0.9em;
+      height: 0.9em;
+    }
+
+    .ng-o-icon.ng-o-icon--baseline svg {
+      top: 0.1em;
+    }
   }
 }

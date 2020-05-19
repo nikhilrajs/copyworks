@@ -4,6 +4,10 @@
   display: flex;
   flex-direction: column;
   border: solid 1px $ng_color-gray-10;
+
+  &.ng-c-card--featured {
+    border: none;
+  }
 }
 
 .ng-c-card--featured {
@@ -14,6 +18,9 @@
 
   @media (min-width: 547px) {
     grid-column: 1 / 3;
+  }
+
+  @media #{$ng_bp-md} {
     margin-left: 0;
     margin-right: 0;
   }
@@ -82,9 +89,6 @@
   height: 15rem;
   overflow: hidden;
   position: relative;
-  margin-left: -1px;
-  margin-right: -1px;
-  margin-top: -1px;
 
   &::after {
     content: "";

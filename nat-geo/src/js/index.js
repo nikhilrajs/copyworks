@@ -1,7 +1,9 @@
 import setHeroImage from './setHeroImage';
-import observeGrid from './observeGrid'
+import globalSearch from './globalSearch';
+// import observeGrid from './observeGrid'
 
-const grid = document.querySelectorAll('.ng-l-grid');
+// const grids = document.querySelectorAll('.ng-l-grid');
 
 setHeroImage();
-observeGrid(grid);
+globalSearch();
+// observeGrid(grids);

@@ -1,6 +1,8 @@
-function observeGrid(gridNode) {
-    // Feature detect ResizeObserver
-    if ('ResizeObserver' in window) {
+function observeGrid(grids) {
+  // Feature detect ResizeObserver
+  if ('ResizeObserver' in window) {
+
+    grids.forEach(gridNode => {
       // Get the min value from data-min="[min]"
       const min = gridNode.dataset.min;
       // Create a proxy element to measure and convert
@@ -23,7 +25,8 @@ function observeGrid(gridNode) {
       });
   
       ro.observe(gridNode);
-    }
+    });
   }
+}
 
   export default observeGrid;

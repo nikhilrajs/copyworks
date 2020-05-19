@@ -5,7 +5,7 @@
   background-position: center center;
 
   > div {
-    @extend .ng-g-container;
+    @extend .ng-l-container;
     height: 100%;
     display: grid;
     grid-template-rows: 0.5fr 1fr;
@@ -43,11 +43,14 @@
   text-align: center;
   z-index: 1;
 
-  @media #{$ng_bp-md} {
-    padding-left: var(--s3);
+  @media #{$ng_bp-sm} {
     text-align: left;
     justify-content: center;
     align-items: flex-start;
+  }
+
+  @media #{$ng_bp-md} {
+    padding-left: var(--s3);
 
     &::before {
       content: "";
@@ -63,6 +66,10 @@
 
   h2 {
     text-transform: uppercase;
+
+    @media #{$ng_bp-sm} {
+      font-size: 2rem;
+    }
 
     @media #{$ng_bp-md} {
       font-size: 2.5rem;

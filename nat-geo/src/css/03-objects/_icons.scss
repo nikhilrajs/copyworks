@@ -1,0 +1,21 @@
+.ng-c-icon {
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+}
+
+.ng-o-icon {
+  display: inline-flex;
+  align-self: center;
+}
+
+.ng-o-icon svg {
+  height: 1em;
+  width: 1em;
+  fill: currentColor;
+}
+
+.ng-o-icon.ng-o-icon--baseline svg {
+  top: 0.185em;
+  position: relative;
+}

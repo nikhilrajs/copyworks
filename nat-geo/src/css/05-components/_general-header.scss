@@ -1,8 +1,9 @@
 .ng-c-general-header {
-  @include center(center);
+  @include center($max-width: 1020px, $text-align: center);
   @include stack(var(--s-1));
   position: relative;
   padding-bottom: var(--s1);
+  margin-bottom: var(--s1);
 
   &::after {
     content: "";
