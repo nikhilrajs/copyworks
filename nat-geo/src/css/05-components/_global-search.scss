@@ -31,21 +31,33 @@
   background: transparent;
   border: none;
   text-transform: uppercase;
-  font-size: var(--s2);
+  font-size: var(--s1);
   color: $ng_color-white;
   cursor: pointer;
+
+  @media #{$ng_bp-md} {
+    font-size: var(--s2);
+  }
+}
+
+.ng-c-gobal-search__input__wrap {
+  flex: 1 1 auto;
 }
 
 .ng-c-gobal-search__input {
-  flex: 1 0 auto;
+  width: 100%;
   background: transparent;
   border: none;
   text-transform: uppercase;
-  font-size: var(--s3);
+  font-size: var(--s1);
   font-weight: bold;
   text-align: center;
   color: $ng_color-white;
   letter-spacing: 10px;
+
+  @media #{$ng_bp-md} {
+    font-size: var(--s3);
+  }
 
   &::placeholder {
     color: $ng_color-gray-66;
@@ -53,10 +65,13 @@
 }
 
 .ng-c-gobal-search__submit-btn {
-  font-size: calc(var(--s1) / 1.2);
   color: $ng_color-gray-40;
   font-weight: 500;
   visibility: hidden;
+
+  @media #{$ng_bp-md} {
+    font-size: calc(var(--s1) / 1.2);
+  }
 }
 
 .ng-c-gobal-search__close-btn {
@@ -65,4 +80,12 @@
   top: var(--s-1);
   padding: 16px 24px;
   color: $ng_color-white;
+}
+
+.ng-js-globalsearch {
+  display: none;
+
+  @media #{$ng_bp-md} {
+    display: inline;
+  }
 }

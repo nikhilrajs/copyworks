@@ -66,3 +66,18 @@
     --content-block-space: var(--s3);
   }
 }
+
+.ng-l-section {
+  --section-v-padding: var(--s1);
+  padding-top: var(--section-v-padding);
+  padding-bottom: var(--section-v-padding);
+
+  @media #{$ng_bp-md} {
+    --section-v-padding: var(--s3);
+  }
+
+  &--inverted {
+    color: $ng_color-white;
+    background: $ng_color-black;
+  }
+}

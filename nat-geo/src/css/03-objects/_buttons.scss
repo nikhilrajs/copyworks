@@ -76,3 +76,18 @@
     }
   }
 }
+
+.ng-o-btn--brand {
+  color: $ng_color-black;
+  background: $ng_color-primary;
+  border: none;
+  font-size: calc(var(--s0) / 1.14);
+
+  &:hover {
+    color: initial;
+  }
+
+  &::before {
+    all: initial;
+  }
+}

@@ -9,8 +9,8 @@
 
   > ul > li > a {
     text-decoration: none;
-    padding: var(--s-3);
     color: $ng_color-gray-80;
+    padding: var(--s-2);
   }
 
   .ng-c-global-nav__link {
@@ -50,6 +50,14 @@
 
     .ng-o-icon.ng-o-icon--baseline svg {
       top: 0.1em;
+    }
+    @media (max-width: $screen-m) {
+      margin-left: var(--s1);
+      border-left: 1px solid $ng_color-gray-30;
+
+      span:not(.ng-o-icon) {
+        display: none;
+      }
     }
   }
 }
